@@ -1,5 +1,7 @@
 # IBACodingChallange
 
+![alt text](https://edumap.az/wp-content/uploads/2019/09/news.png "Logo Title Text 1")
+
 ### Project Implementation
 
 In this "Pay" challenge we ask you to build an app for showing transactions "Project Implementation" for customer in list view and show it's details in other view. We'll give you some tips if needed, but the requirements and specification are quite open.
