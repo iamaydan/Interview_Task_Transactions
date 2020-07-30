@@ -6,6 +6,14 @@ export const DetailsScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.amount}>${item.amount}</Text>
+      <View style={styles.buttons}>
+        <View>
+          <Text>Card</Text>
+        </View>
+        <View>
+          <Text>Debt</Text>
+        </View>
+      </View>
       <Text>{item.date}</Text>
       <Text>{item.payWith}</Text>
       <Text>{item.type}</Text>
@@ -24,5 +32,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginVertical: 25,
     fontWeight: "bold",
+  },
+  buttons: {
+    flexDirection: "row",
   },
 });
