@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity, Alert } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 
 export const Detail = ({ label, data }) => {
@@ -8,7 +8,9 @@ export const Detail = ({ label, data }) => {
       <Text style={styles.label}>{label}</Text>
       <View style={styles.info}>
         <Text>{data}</Text>
-        <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+        <TouchableOpacity onPress={() => Alert.alert("Additional info")}>
+          <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+        </TouchableOpacity>
       </View>
     </View>
   );

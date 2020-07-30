@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider } from "react-native-elements";
-import { View, StyleSheet, Text } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import { View, StyleSheet, Text, TouchableOpacity, Alert } from "react-native";
 
 import { Detail } from "../Components/Detail";
 
@@ -11,14 +11,20 @@ export const DetailsScreen = ({ route }) => {
     <View style={styles.container}>
       <Text style={styles.amount}>${item.amount}</Text>
       <View style={styles.buttons}>
-        <View style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Alert.alert("Card details")}
+        >
           <Icon name="credit-card" size={18} color="#000" />
           <Text style={styles.btnText}>Card</Text>
-        </View>
-        <View style={styles.button}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Alert.alert("Debt details")}
+        >
           <Icon name="dollar-sign" size={18} color="#000" />
           <Text style={styles.btnText}>Debt</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <Text style={styles.details}>Transaction Details</Text>
       <Divider />
