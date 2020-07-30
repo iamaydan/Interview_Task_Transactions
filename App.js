@@ -20,7 +20,8 @@ export default function App() {
         <Screen
           name="Details"
           component={DetailsScreen}
-          options={({ navigation }) => ({
+          options={({ navigation, route }) => ({
+            title: route?.params.item.name,
             headerLeft: () => (
               <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Icon

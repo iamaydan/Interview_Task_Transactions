@@ -1,11 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Platform, Text, ScrollView } from "react-native";
 
-export const DetailsScreen = () => {
+export const DetailsScreen = ({ route }) => {
+  console.log("route", route);
+  const { item } = route?.params;
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Text>hey</Text>
+        <Text>{item.name}</Text>
       </ScrollView>
     </View>
   );
