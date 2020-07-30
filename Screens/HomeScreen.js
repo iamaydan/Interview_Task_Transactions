@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
-import { SearchBar, Divider, Avatar } from "react-native-elements";
+import { View, StyleSheet, Text } from "react-native";
+import { SearchBar, Divider } from "react-native-elements";
 
 import { DUMMY } from "../dummy";
-import { Progress } from "../Components/Progress";
-import { FlatList } from "react-native-gesture-handler";
-import { List } from "../Components/List";
+import { Progress, List } from "../Components";
+import { ScrollView } from "react-native-gesture-handler";
 
 export const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -29,25 +22,30 @@ export const HomeScreen = ({ navigation }) => {
       <Text style={styles.heading}>Performance</Text>
       <Divider />
       <View style={styles.progressContainer}>
-        <Progress color="#80e1ae" percent={64} heading="Current Week" />
-        <Progress color="#f8606a" percent={40} heading="Last Week" />
-        <Progress color="#606af9" percent={90} heading="Last Month" />
+        {DUMMY.map((item) => (
+          <Progress
+            key={item.color}
+            color={item.color}
+            percent={item.percentage}
+            label={item.label}
+          />
+        ))}
       </View>
       <Text style={styles.heading}>Transactions</Text>
       <Divider />
-      <FlatList
-        data={DUMMY}
-        keyExtractor={(item) => item.name + item.date}
-        renderItem={(item) => <List item={item} navigation={navigation} />}
-      />
+      <ScrollView style={styles.body}>
+        {DUMMY.map((item) => (
+          <List key={item.label} item={item.users} navigation={navigation} />
+        ))}
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 15,
     flex: 1,
+    paddingHorizontal: 15,
     backgroundColor: "#fff",
   },
   searchBar: {
@@ -73,6 +71,6 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   body: {
-    marginVertical: 15,
+    paddingTop: 20,
   },
 });

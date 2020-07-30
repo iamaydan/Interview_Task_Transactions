@@ -1,27 +1,36 @@
 import React from "react";
-import { Avatar } from "react-native-elements";
+import { Avatar, Divider } from "react-native-elements";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export const List = ({ item, navigation }) => {
-  const { name, amount, uri } = item.item;
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("Details", { item: item.item })}
-      style={styles.list}
-    >
-      <View style={styles.user}>
-        <Avatar size={30} rounded source={uri} />
-        <Text style={styles.name}>{name}</Text>
-      </View>
-      <Text style={styles.amount}>${amount}</Text>
-    </TouchableOpacity>
+    <View style={styles.list}>
+      {item.map((key) => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Details", { item: key })}
+          style={styles.row}
+          key={key.name}
+        >
+          <View style={styles.user}>
+            <Avatar size={30} rounded source={key.uri} />
+            <Text style={styles.name}>{key.name}</Text>
+          </View>
+          <Text style={styles.amount}>${key.amount}</Text>
+        </TouchableOpacity>
+      ))}
+      <Divider />
+      <Divider />
+    </View>
   );
 };
 const styles = StyleSheet.create({
   list: {
-    flexDirection: "row",
     width: "100%",
     marginVertical: 10,
+  },
+  row: {
+    flexDirection: "row",
+    marginBottom: 15,
     alignItems: "center",
     justifyContent: "space-between",
   },

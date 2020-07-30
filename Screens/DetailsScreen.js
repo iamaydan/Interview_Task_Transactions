@@ -2,6 +2,7 @@ import React from "react";
 import { Divider } from "react-native-elements";
 import { View, StyleSheet, Text } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+
 import { Detail } from "../Components/Detail";
 
 export const DetailsScreen = ({ route }) => {

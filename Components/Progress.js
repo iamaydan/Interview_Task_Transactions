@@ -2,10 +2,10 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import ProgressCircle from "react-native-progress-circle";
 
-export const Progress = ({ heading, percent, color }) => {
+export const Progress = ({ label, percent, color }) => {
   return (
     <View style={styles.progress}>
-      <Text style={styles.heading}>{heading}</Text>
+      <Text style={styles.label}>{label}</Text>
       <ProgressCircle
         percent={percent}
         radius={50}
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   progress: {
     alignItems: "center",
   },
-  heading: {
+  label: {
     color: "#acb5be",
     marginBottom: 15,
     fontWeight: "bold",
