@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   list: {
     width: "100%",
     marginVertical: 10,
+    paddingHorizontal: 15,
   },
   row: {
     flexDirection: "row",
