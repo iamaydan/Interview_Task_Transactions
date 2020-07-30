@@ -10,10 +10,12 @@ export const DetailsScreen = ({ route }) => {
       <Text style={styles.amount}>${item.amount}</Text>
       <View style={styles.buttons}>
         <View style={styles.button}>
-          <Text>Card</Text>
+          <Icon name="credit-card" size={18} />
+          <Text style={styles.btnText}>Card</Text>
         </View>
         <View style={styles.button}>
-          <Text>Debt</Text>
+          <Icon name="dollar-sign" size={18} />
+          <Text style={styles.btnText}>Debt</Text>
         </View>
       </View>
       <Text style={styles.details}>Transaction Details</Text>
@@ -22,24 +24,24 @@ export const DetailsScreen = ({ route }) => {
         <View style={styles.listItem}>
           <Text style={styles.listName}>Payment Detail</Text>
           <View style={styles.info}>
-            <Text style={styles.info}>{item.date}</Text>
-            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+            <Text>{item.date}</Text>
+            <Icon name="info" color="#1983ff" size={20} />
           </View>
         </View>
         <Divider />
         <View style={styles.listItem}>
           <Text style={styles.listName}>Type</Text>
           <View style={styles.info}>
-            <Text style={styles.info}>{item.type}</Text>
-            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+            <Text>{item.type}</Text>
+            <Icon name="info" color="#1983ff" size={20} />
           </View>
         </View>
         <Divider />
         <View style={styles.listItem}>
           <Text style={styles.listName}>Pay With</Text>
           <View style={styles.info}>
-            <Text style={styles.info}>{item.payWith}</Text>
-            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+            <Text>{item.payWith}</Text>
+            <Icon name="info" color="#1983ff" size={20} />
           </View>
         </View>
       </View>
@@ -71,8 +73,21 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
     marginHorizontal: 10,
     marginBottom: 40,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
+  },
+  btnText: {
+    color: "#464646",
+    marginLeft: 5,
   },
   details: {
     fontSize: 17,
@@ -94,8 +109,5 @@ const styles = StyleSheet.create({
   info: {
     flexDirection: "row",
     alignItems: "center",
-  },
-  icon: {
-    marginLeft: 15,
   },
 });
