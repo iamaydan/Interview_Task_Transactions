@@ -19,17 +19,17 @@ export const DetailsScreen = ({ route }) => {
       <Divider />
       <View style={styles.list}>
         <View style={styles.listItem}>
-          <Text>Payment Detail</Text>
+          <Text style={styles.listName}>Payment Detail</Text>
           <Text>{item.date}</Text>
         </View>
         <Divider />
         <View style={styles.listItem}>
-          <Text>Type</Text>
+          <Text style={styles.listName}>Type</Text>
           <Text>{item.type}</Text>
         </View>
         <Divider />
         <View style={styles.listItem}>
-          <Text>Pay With</Text>
+          <Text style={styles.listName}>Pay With</Text>
           <Text>{item.payWith}</Text>
         </View>
       </View>
@@ -76,5 +76,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginVertical: 15,
     justifyContent: "space-between",
+  },
+  listName: {
+    fontSize: 17,
+    fontWeight: "500",
   },
 });
