@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   amount: {
     fontSize: 35,
     alignSelf: "center",
-    marginVertical: 20,
+    marginVertical: 25,
     fontWeight: "bold",
   },
 });
