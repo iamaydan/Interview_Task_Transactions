@@ -6,7 +6,7 @@ export const DetailsScreen = ({ route }) => {
   const { item } = route?.params;
   return (
     <View style={styles.container}>
-      <Text>{item.amount}</Text>
+      <Text>${item.amount}</Text>
       <Text>{item.date}</Text>
       <Text>{item.payWith}</Text>
       <Text>{item.type}</Text>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Platform, Text, ScrollView } from "react-native";
-import { SearchBar, Divider } from "react-native-elements";
+import { SearchBar, Divider, Avatar } from "react-native-elements";
 import ProgressCircle from "react-native-progress-circle";
-import { ListItem } from "react-native-elements";
 
 import { DUMMY } from "../dummy";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -77,13 +76,16 @@ export const HomeScreen = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => navigation.navigate("Details", { item })}
           >
-            <ListItem
-              key={item.name}
-              leftAvatar={{ source: { uri: item.uri } }}
-              title={item.name}
-              subtitle={item.amount}
-              bottomDivider
-            />
+            <View style={styles.list}>
+              <Avatar
+                rounded
+                source={{
+                  uri: item.uri,
+                }}
+              />
+              <Text>{item.name}</Text>
+              <Text>{item.amount}</Text>
+            </View>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -137,5 +139,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#606af9",
     fontWeight: "bold",
+  },
+  list: {
+    flexDirection: "row",
+    width: "100%",
+    marginVertical: 5,
+    alignItems: "center",
   },
 });
