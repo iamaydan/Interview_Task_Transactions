@@ -39,12 +39,13 @@ export const HomeScreen = ({ navigation }) => {
           <TouchableOpacity
             key={item.name}
             onPress={() => navigation.navigate("Details", { item })}
+            style={styles.list}
           >
-            <View style={styles.list}>
+            <View style={styles.user}>
               <Avatar size={30} rounded source={item.uri} />
               <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.amount}>${item.amount}</Text>
             </View>
+            <Text style={styles.amount}>${item.amount}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -88,13 +89,16 @@ const styles = StyleSheet.create({
     width: "100%",
     marginVertical: 10,
     alignItems: "center",
+    justifyContent: "space-between",
+  },
+  user: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   name: {
     marginLeft: 10,
   },
   amount: {
-    position: "absolute",
-    right: 20,
     color: "#a7a7a7",
     fontWeight: "bold",
   },
