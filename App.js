@@ -13,6 +13,11 @@ export default function App() {
     <NavigationContainer>
       <Navigator>
         <Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Screen
           name="Details"
           component={DetailsScreen}
           options={({ navigation }) => ({
@@ -27,11 +32,6 @@ export default function App() {
               </TouchableOpacity>
             ),
           })}
-        />
-        <Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ headerShown: false }}
         />
       </Navigator>
     </NavigationContainer>

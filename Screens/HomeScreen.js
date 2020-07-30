@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { View, StyleSheet, Platform, Text, ScrollView } from "react-native";
 import { SearchBar, Divider } from "react-native-elements";
 import ProgressCircle from "react-native-progress-circle";
+import { ListItem } from "react-native-elements";
 
 import { DUMMY } from "../dummy";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
   return (
     <View style={styles.container}>
@@ -72,9 +74,15 @@ export const HomeScreen = () => {
       </View>
       <ScrollView>
         {DUMMY.map((item) => (
-          <View>
-            <Text>{item.name}</Text>
-          </View>
+          <TouchableOpacity onPress={() => navigation.navigate("Details")}>
+            <ListItem
+              key={item.name}
+              leftAvatar={{ source: { uri: item.uri } }}
+              title={item.name}
+              subtitle={item.amount}
+              bottomDivider
+            />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>
