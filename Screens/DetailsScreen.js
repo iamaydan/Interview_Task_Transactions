@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Platform, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
 export const DetailsScreen = ({ route }) => {
   const { item } = route?.params;

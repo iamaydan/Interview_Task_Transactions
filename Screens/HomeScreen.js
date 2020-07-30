@@ -77,13 +77,7 @@ export const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("Details", { item })}
           >
             <View style={styles.list}>
-              <Avatar
-                size={30}
-                rounded
-                source={{
-                  uri: item.uri,
-                }}
-              />
+              <Avatar size={30} rounded source={item.uri} />
               <Text style={styles.name}>{item.name}</Text>
               <Text style={styles.amount}>${item.amount}</Text>
             </View>

@@ -27,7 +27,7 @@ export default function App() {
                 <Icon
                   name="arrow-left"
                   color="#f8606a"
-                  size={25}
+                  size="25"
                   style={{ marginLeft: 15 }}
                 />
               </TouchableOpacity>
