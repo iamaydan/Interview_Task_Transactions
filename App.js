@@ -15,7 +15,11 @@ export default function App() {
         <Screen
           name="Home"
           component={HomeScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerTitle: "Transactions",
+            headerTitleAlign: "left",
+            headerTitleStyle: { fontSize: 30 },
+          }}
         />
         <Screen
           name="Details"

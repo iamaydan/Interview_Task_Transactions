@@ -1,6 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
 import { Divider } from "react-native-elements";
+import { View, StyleSheet, Text } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 
 export const DetailsScreen = ({ route }) => {
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: "row",
     alignSelf: "center",
+    alignItems: "baseline",
   },
   button: {
     width: 80,
