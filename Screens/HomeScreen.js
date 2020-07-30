@@ -83,8 +83,8 @@ export const HomeScreen = ({ navigation }) => {
                   uri: item.uri,
                 }}
               />
-              <Text>{item.name}</Text>
-              <Text>{item.amount}</Text>
+              <Text style={styles.name}>{item.name}</Text>
+              <Text style={styles.amount}>{item.amount}</Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -145,5 +145,12 @@ const styles = StyleSheet.create({
     width: "100%",
     marginVertical: 5,
     alignItems: "center",
+  },
+  name: {
+    marginLeft: 10,
+  },
+  amount: {
+    position: "absolute",
+    right: 20,
   },
 });
