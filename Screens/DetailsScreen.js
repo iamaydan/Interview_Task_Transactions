@@ -6,9 +6,10 @@ export const DetailsScreen = ({ route }) => {
   const { item } = route?.params;
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <Text>{item.name}</Text>
-      </ScrollView>
+      <Text>{item.amount}</Text>
+      <Text>{item.date}</Text>
+      <Text>{item.payWith}</Text>
+      <Text>{item.type}</Text>
     </View>
   );
 };
