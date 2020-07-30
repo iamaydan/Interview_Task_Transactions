@@ -7,7 +7,7 @@ export const DUMMY = [
     label: "Current week",
     percentage: 64,
     color: "#80e1ae",
-    users: [
+    operations: [
       {
         uri: p1,
         name: "Ada Lovelace",
@@ -37,7 +37,7 @@ export const DUMMY = [
     label: "Last week",
     percentage: 40,
     color: "#f8606a",
-    users: [
+    operations: [
       {
         uri: p1,
         name: "Ada Lovelace",
@@ -67,7 +67,7 @@ export const DUMMY = [
     label: "Last month",
     percentage: 90,
     color: "#606af9",
-    users: [
+    operations: [
       {
         uri: p1,
         name: "Ada Lovelace",

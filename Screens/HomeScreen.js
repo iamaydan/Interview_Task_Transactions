@@ -21,22 +21,28 @@ export const HomeScreen = ({ navigation }) => {
       />
       <Text style={styles.heading}>Performance</Text>
       <Divider />
-      <View style={styles.progressContainer}>
-        {DUMMY.map((item) => (
-          <Progress
-            key={item.color}
-            color={item.color}
-            percent={item.percentage}
-            label={item.label}
-          />
-        ))}
-      </View>
-      <Text style={styles.heading}>Transactions</Text>
-      <Divider />
-      <ScrollView style={styles.body}>
-        {DUMMY.map((item) => (
-          <List key={item.label} item={item.users} navigation={navigation} />
-        ))}
+      <ScrollView>
+        <View style={styles.progressContainer}>
+          {DUMMY.map((item) => (
+            <Progress
+              key={item.color}
+              color={item.color}
+              percent={item.percentage}
+              label={item.label}
+            />
+          ))}
+        </View>
+        <Text style={styles.heading}>Transactions</Text>
+        <Divider />
+        <View style={styles.body}>
+          {DUMMY.map((item) => (
+            <List
+              key={item.label}
+              item={item.operations}
+              navigation={navigation}
+            />
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
@@ -69,6 +75,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     marginVertical: 20,
+    paddingHorizontal: 15,
   },
   body: {
     paddingTop: 20,
