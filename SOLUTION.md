@@ -1,7 +1,5 @@
 # IBACodingChallange
 
-## IBA Coding Challange
-
 ### Project Implementation
 
 In this "Pay" challenge we ask you to build an app for showing transactions "Project Implementation" for customer in list view and show it's details in other view. We'll give you some tips if needed, but the requirements and specification are quite open.
