@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Divider } from "react-native-elements";
+import Icon from "react-native-vector-icons/Feather";
 
 export const DetailsScreen = ({ route }) => {
   const { item } = route?.params;
@@ -20,17 +21,26 @@ export const DetailsScreen = ({ route }) => {
       <View style={styles.list}>
         <View style={styles.listItem}>
           <Text style={styles.listName}>Payment Detail</Text>
-          <Text>{item.date}</Text>
+          <View style={styles.info}>
+            <Text style={styles.info}>{item.date}</Text>
+            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+          </View>
         </View>
         <Divider />
         <View style={styles.listItem}>
           <Text style={styles.listName}>Type</Text>
-          <Text>{item.type}</Text>
+          <View style={styles.info}>
+            <Text style={styles.info}>{item.type}</Text>
+            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+          </View>
         </View>
         <Divider />
         <View style={styles.listItem}>
           <Text style={styles.listName}>Pay With</Text>
-          <Text>{item.payWith}</Text>
+          <View style={styles.info}>
+            <Text style={styles.info}>{item.payWith}</Text>
+            <Icon name="info" color="#1983ff" size={20} style={styles.icon} />
+          </View>
         </View>
       </View>
       <Divider />
@@ -80,5 +90,12 @@ const styles = StyleSheet.create({
   listName: {
     fontSize: 17,
     fontWeight: "500",
+  },
+  info: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icon: {
+    marginLeft: 15,
   },
 });

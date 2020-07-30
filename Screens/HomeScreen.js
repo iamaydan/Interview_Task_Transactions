@@ -74,6 +74,7 @@ export const HomeScreen = ({ navigation }) => {
       <ScrollView style={styles.body}>
         {DUMMY.map((item) => (
           <TouchableOpacity
+            key={item.name}
             onPress={() => navigation.navigate("Details", { item })}
           >
             <View style={styles.list}>
