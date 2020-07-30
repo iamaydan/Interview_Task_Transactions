@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   View,
   StyleSheet,
-  Platform,
   Text,
   ScrollView,
   TouchableOpacity,
@@ -11,6 +10,8 @@ import { SearchBar, Divider, Avatar } from "react-native-elements";
 
 import { DUMMY } from "../dummy";
 import { Progress } from "../Components/Progress";
+import { FlatList } from "react-native-gesture-handler";
+import { List } from "../Components/List";
 
 export const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -28,27 +29,17 @@ export const HomeScreen = ({ navigation }) => {
       <Text style={styles.heading}>Performance</Text>
       <Divider />
       <View style={styles.progressContainer}>
-        <Progress color="#80e1ae" percent="64" heading="Current Week" />
-        <Progress color="#f8606a" percent="40" heading="Last Week" />
-        <Progress color="#606af9" percent="90" heading="Last Month" />
+        <Progress color="#80e1ae" percent={64} heading="Current Week" />
+        <Progress color="#f8606a" percent={40} heading="Last Week" />
+        <Progress color="#606af9" percent={90} heading="Last Month" />
       </View>
       <Text style={styles.heading}>Transactions</Text>
       <Divider />
-      <ScrollView style={styles.body}>
-        {DUMMY.map((item) => (
-          <TouchableOpacity
-            key={item.name}
-            onPress={() => navigation.navigate("Details", { item })}
-            style={styles.list}
-          >
-            <View style={styles.user}>
-              <Avatar size={30} rounded source={item.uri} />
-              <Text style={styles.name}>{item.name}</Text>
-            </View>
-            <Text style={styles.amount}>${item.amount}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+      <FlatList
+        data={DUMMY}
+        keyExtractor={(item) => item.name + item.date}
+        renderItem={(item) => <List item={item} navigation={navigation} />}
+      />
     </View>
   );
 };
@@ -83,23 +74,5 @@ const styles = StyleSheet.create({
   },
   body: {
     marginVertical: 15,
-  },
-  list: {
-    flexDirection: "row",
-    width: "100%",
-    marginVertical: 10,
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  user: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  name: {
-    marginLeft: 10,
-  },
-  amount: {
-    color: "#a7a7a7",
-    fontWeight: "bold",
   },
 });

@@ -2,6 +2,7 @@ import React from "react";
 import { Divider } from "react-native-elements";
 import { View, StyleSheet, Text } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import { Detail } from "../Components/Detail";
 
 export const DetailsScreen = ({ route }) => {
   const { item } = route?.params;
@@ -10,55 +11,23 @@ export const DetailsScreen = ({ route }) => {
       <Text style={styles.amount}>${item.amount}</Text>
       <View style={styles.buttons}>
         <View style={styles.button}>
-          <Icon name="credit-card" size={18} />
+          <Icon name="credit-card" size={18} color="#000" />
           <Text style={styles.btnText}>Card</Text>
         </View>
         <View style={styles.button}>
-          <Icon name="dollar-sign" size={18} />
+          <Icon name="dollar-sign" size={18} color="#000" />
           <Text style={styles.btnText}>Debt</Text>
         </View>
       </View>
       <Text style={styles.details}>Transaction Details</Text>
       <Divider />
       <View style={styles.list}>
-        <View style={styles.listItem}>
-          <Text style={styles.listName}>Payment Detail</Text>
-          <View style={styles.info}>
-            <Text>{item.date}</Text>
-            <Icon
-              name="info"
-              color="#1983ff"
-              size={20}
-              style={styles.infoIcon}
-            />
-          </View>
-        </View>
+        <Detail label="Payment Detail" data={item.date} />
         <Divider />
-        <View style={styles.listItem}>
-          <Text style={styles.listName}>Type</Text>
-          <View style={styles.info}>
-            <Text>{item.type}</Text>
-            <Icon
-              name="info"
-              color="#1983ff"
-              size={20}
-              style={styles.infoIcon}
-            />
-          </View>
-        </View>
+        <Detail label="Type" data={item.type} />
         <Divider />
-        <View style={styles.listItem}>
-          <Text style={styles.listName}>Pay With</Text>
-          <View style={styles.info}>
-            <Text>{item.payWith}</Text>
-            <Icon
-              name="info"
-              color="#1983ff"
-              size={20}
-              style={styles.infoIcon}
-            />
-          </View>
-        </View>
+        <Detail label="Pay With" data={item.payWith} />
+        <Divider />
       </View>
       <Divider />
     </View>
@@ -80,13 +49,12 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: "row",
     alignSelf: "center",
-    alignItems: "baseline",
   },
   button: {
-    width: 80,
-    backgroundColor: "#e0e0e0",
-    height: 30,
+    width: 100,
+    height: 25,
     borderRadius: 20,
+    backgroundColor: "#e0e0e0",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
@@ -112,21 +80,5 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 20,
-  },
-  listItem: {
-    flexDirection: "row",
-    marginVertical: 15,
-    justifyContent: "space-between",
-  },
-  listName: {
-    fontSize: 17,
-    fontWeight: "500",
-  },
-  info: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  infoIcon: {
-    marginLeft: 5,
   },
 });

@@ -6,7 +6,7 @@ export const DUMMY = [
   {
     key: "currentWeek",
     uri: p1,
-    name: "Ada LoveLace",
+    name: "Ada Lovelace",
     amount: 1300.5,
     date: "24 May 20",
     type: "Debt",
