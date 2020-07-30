@@ -7,10 +7,10 @@ export const DetailsScreen = ({ route }) => {
     <View style={styles.container}>
       <Text style={styles.amount}>${item.amount}</Text>
       <View style={styles.buttons}>
-        <View>
+        <View style={styles.button}>
           <Text>Card</Text>
         </View>
-        <View>
+        <View style={styles.button}>
           <Text>Debt</Text>
         </View>
       </View>
@@ -35,5 +35,14 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flexDirection: "row",
+    alignSelf: "center",
+  },
+  button: {
+    width: 80,
+    backgroundColor: "#e0e0e0",
+    height: 30,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
