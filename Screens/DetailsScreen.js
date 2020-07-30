@@ -25,7 +25,12 @@ export const DetailsScreen = ({ route }) => {
           <Text style={styles.listName}>Payment Detail</Text>
           <View style={styles.info}>
             <Text>{item.date}</Text>
-            <Icon name="info" color="#1983ff" size={20} />
+            <Icon
+              name="info"
+              color="#1983ff"
+              size={20}
+              style={styles.infoIcon}
+            />
           </View>
         </View>
         <Divider />
@@ -33,7 +38,12 @@ export const DetailsScreen = ({ route }) => {
           <Text style={styles.listName}>Type</Text>
           <View style={styles.info}>
             <Text>{item.type}</Text>
-            <Icon name="info" color="#1983ff" size={20} />
+            <Icon
+              name="info"
+              color="#1983ff"
+              size={20}
+              style={styles.infoIcon}
+            />
           </View>
         </View>
         <Divider />
@@ -41,7 +51,12 @@ export const DetailsScreen = ({ route }) => {
           <Text style={styles.listName}>Pay With</Text>
           <View style={styles.info}>
             <Text>{item.payWith}</Text>
-            <Icon name="info" color="#1983ff" size={20} />
+            <Icon
+              name="info"
+              color="#1983ff"
+              size={20}
+              style={styles.infoIcon}
+            />
           </View>
         </View>
       </View>
@@ -109,5 +124,8 @@ const styles = StyleSheet.create({
   info: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  infoIcon: {
+    marginLeft: 5,
   },
 });
