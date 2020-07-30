@@ -71,20 +71,21 @@ export const HomeScreen = ({ navigation }) => {
           </ProgressCircle>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView style={styles.body}>
         {DUMMY.map((item) => (
           <TouchableOpacity
             onPress={() => navigation.navigate("Details", { item })}
           >
             <View style={styles.list}>
               <Avatar
+                size={30}
                 rounded
                 source={{
                   uri: item.uri,
                 }}
               />
               <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.amount}>{item.amount}</Text>
+              <Text style={styles.amount}>${item.amount}</Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -140,10 +141,13 @@ const styles = StyleSheet.create({
     color: "#606af9",
     fontWeight: "bold",
   },
+  body: {
+    marginVertical: 15,
+  },
   list: {
     flexDirection: "row",
     width: "100%",
-    marginVertical: 5,
+    marginVertical: 10,
     alignItems: "center",
   },
   name: {
@@ -152,5 +156,7 @@ const styles = StyleSheet.create({
   amount: {
     position: "absolute",
     right: 20,
+    color: "#a7a7a7",
+    fontWeight: "bold",
   },
 });

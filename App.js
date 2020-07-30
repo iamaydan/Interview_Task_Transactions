@@ -23,7 +23,7 @@ export default function App() {
           options={({ navigation, route }) => ({
             title: route?.params.item.name,
             headerLeft: () => (
-              <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Icon
                   name="arrow-left"
                   color="#f8606a"

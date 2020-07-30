@@ -2,7 +2,6 @@ import React from "react";
 import { View, StyleSheet, Platform, Text, ScrollView } from "react-native";
 
 export const DetailsScreen = ({ route }) => {
-  console.log("route", route);
   const { item } = route?.params;
   return (
     <View style={styles.container}>
