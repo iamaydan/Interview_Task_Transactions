@@ -1,4 +1,4 @@
-# IBACodingChallange
+# IBA Coding Challange
 
 ![alt text](https://edumap.az/wp-content/uploads/2019/09/news.png "Logo Title Text 1")
 
